@@ -365,6 +365,14 @@ The scanner computes inter-frame absolute difference in the lane ROI (right 55\,
 \end{table}
 
 Ball detection succeeds on all 10 throws (39--244 clean detections per throw), demonstrating that the MOG2~+~contour pipeline generalises across different bowlers, lighting conditions, and ball colours present in the clip.
+Figure~\ref{fig:multithrow} shows trajectory overlays for six of these throws.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Images/fig5_multi_throw.jpg}
+    \caption{Ball trajectory overlaid on a mid-throw frame for 6 different throws from the same broadcast clip (t = 126\,s to t = 1126\,s). Colour encodes time: blue (release) $\to$ yellow (mid) $\to$ red (end). White dots = raw detections. Detection counts range from 59 to 244 per throw.}
+    \label{fig:multithrow}
+\end{figure}
 Rows marked ``—'' indicate throws where the camera framing shifted enough that the fixed manual DLT control points (identified on throw~14) produce an ill-conditioned homography; the 3D metrics for those throws are unreliable.
 Automatic control-point detection (open problem~3) would resolve this.
 
