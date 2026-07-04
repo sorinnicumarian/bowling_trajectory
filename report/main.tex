@@ -395,7 +395,7 @@ Figure~\ref{fig:multithrow} shows trajectory overlays for six of these throws.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Images/fig5_multi_throw.jpg}
-    \caption{Ball trajectory overlaid on a mid-throw frame for 6 different throws from the same broadcast clip (t = 126\,s to t = 1126\,s). Colour encodes time: blue (release) $\to$ yellow (mid) $\to$ red (end). White dots = raw detections. Detection counts range from 59 to 244 per throw.}
+    \caption{Ball detection across 6 different throws from the same broadcast clip (t = 126\,s to 1126\,s). The green circle marks the highest-confidence detection in each throw segment; the coloured tail shows the 20 preceding detections. Detection counts (inliers after RANSAC filter) range from 67 to 176 per throw.}
     \label{fig:multithrow}
 \end{figure}
 Rows marked ``—'' indicate throws where the camera framing shifted enough that the fixed manual DLT control points (identified on throw~14) produce an ill-conditioned homography; the 3D metrics for those throws are unreliable.
