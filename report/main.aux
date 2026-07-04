@@ -1,0 +1,58 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{Table of Contents}{3}{table.caption.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{List of Figures}{4}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{List of Tables}{4}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{5}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{5}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{}{5}{\listtablename }{section.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Solution Approach}{5}{section.3}\protected@file@percent }
+\newlabel{sec:method}{{}{5}{\listtablename }{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Ball Detection}{5}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Lane Calibration and Camera Model}{6}{subsection.3.2}\protected@file@percent }
+\newlabel{eq:iac}{{5}{7}{Intrinsic Estimation from the IAC}{equation.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}3D Trajectory Reconstruction}{7}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Spin Estimation}{8}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Implementation}{8}{section.4}\protected@file@percent }
+\newlabel{sec:implementation}{{}{8}{Angular Velocity Recovery}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Software Architecture}{8}{subsection.4.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Pipeline modules and their responsibilities.}}{8}{table.caption.18}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:modules}{{1}{8}{Pipeline modules and their responsibilities}{table.caption.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Key Implementation Details}{9}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Experimental Results}{9}{section.5}\protected@file@percent }
+\newlabel{sec:results}{{}{9}{Usage}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Video Data}{9}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Ball Detection}{9}{subsection.5.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Ball detection statistics over the throw segment.}}{9}{table.caption.20}\protected@file@percent }
+\newlabel{tab:detection}{{2}{9}{Ball detection statistics over the throw segment}{table.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Ball detection at release. Green circle~= contour method (preferred); yellow~= Hough fallback. Ball correctly localised at $(938, 680)$, radius $r=46$\,px. Top 15\,\% of frame excluded.}}{10}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:detection}{{1}{10}{Ball detection at release. Green circle~= contour method (preferred); yellow~= Hough fallback. Ball correctly localised at $(938, 680)$, radius $r=46$\,px. Top 15\,\% of frame excluded}{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Lane Calibration}{10}{subsection.5.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Lane calibration results.}}{10}{table.caption.22}\protected@file@percent }
+\newlabel{tab:calib}{{3}{10}{Lane calibration results}{table.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Lane calibration: 6 Hough lines (yellow/orange) restricted to the right 55\,\% of the frame, converging to the vanishing point (red circle) at $(1012, 106)$. The player is excluded by the ROI mask (vertical blue line).}}{11}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:calib}{{2}{11}{Lane calibration: 6 Hough lines (yellow/orange) restricted to the right 55\,\% of the frame, converging to the vanishing point (red circle) at $(1012, 106)$. The player is excluded by the ROI mask (vertical blue line)}{figure.caption.23}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}2D and 3D Trajectory}{11}{subsection.5.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Trajectory analysis results.}}{11}{table.caption.24}\protected@file@percent }
+\newlabel{tab:traj}{{4}{11}{Trajectory analysis results}{table.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 2D ball trajectory over 6.36\,s. Colour encodes time: blue (release) $\to $ yellow (mid) $\to $ red (end). White dots~= raw detections. Arrows indicate direction of travel. The hook of $+168$\,px is annotated with a yellow brace.}}{12}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:traj}{{3}{12}{2D ball trajectory over 6.36\,s. Colour encodes time: blue (release) $\to $ yellow (mid) $\to $ red (end). White dots~= raw detections. Arrows indicate direction of travel. The hook of $+168$\,px is annotated with a yellow brace}{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Spin Estimation}{12}{subsection.5.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Lucas--Kanade tracking on the ball surface crop (5$\times $ magnified inset). Coloured arcs trace the trajectory of 17 feature points across 25 frames. The yellow circle marks the detected finger hole.}}{13}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:spin}{{4}{13}{Lucas--Kanade tracking on the ball surface crop (5$\times $ magnified inset). Coloured arcs trace the trajectory of 17 feature points across 25 frames. The yellow circle marks the detected finger hole}{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions and Open Problems}{13}{section.6}\protected@file@percent }
+\newlabel{sec:conclusion}{{}{13}{Usage}{section.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}References}{14}{section.7}\protected@file@percent }
+\newlabel{lucas1981}{{1}{14}{Usage}{Item.9}{}}
+\newlabel{caprile1990}{{2}{14}{Usage}{Item.10}{}}
+\newlabel{cipolla1999}{{3}{14}{Usage}{Item.11}{}}
+\newlabel{zivkovic2004}{{4}{14}{Usage}{Item.12}{}}
+\newlabel{yan2006}{{5}{14}{Usage}{Item.13}{}}
+\newlabel{chu2006}{{6}{14}{Usage}{Item.14}{}}
+\newlabel{gibbs2014}{{7}{14}{Usage}{Item.15}{}}
+\newlabel{shah2017}{{8}{14}{Usage}{Item.16}{}}
+\newlabel{caglioti2025}{{9}{14}{Usage}{Item.17}{}}
+\gdef \@abspage@last{14}
