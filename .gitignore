@@ -1,0 +1,18 @@
+# Video files (too large for GitHub)
+data/video/*.mp4
+data/video/*.avi
+data/video/*.mov
+
+# Python
+__pycache__/
+*.pyc
+.DS_Store
+
+# LaTeX build artifacts
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.lof
+report/*.lot
+report/*.synctex.gz
