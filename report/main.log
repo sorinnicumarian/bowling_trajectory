@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.29)  4 JUL 2026 14:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.29)  4 JUL 2026 15:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1219,7 +1219,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [8]
-<Images/fig1_detection.jpg, id=218, 1927.2pt x 1084.05pt>
+<Images/fig1_detection.jpg, id=226, 1927.2pt x 1084.05pt>
 File: Images/fig1_detection.jpg Graphic file (type jpg)
 <use Images/fig1_detection.jpg>
 Package pdftex.def Info: Images/fig1_detection.jpg  used on input line 307.
@@ -1237,7 +1237,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [9]
-<Images/fig2_calibration.jpg, id=230, 1927.2pt x 1084.05pt>
+<Images/fig2_calibration.jpg, id=238, 1927.2pt x 1084.05pt>
 File: Images/fig2_calibration.jpg Graphic file (type jpg)
 <use Images/fig2_calibration.jpg>
 Package pdftex.def Info: Images/fig2_calibration.jpg  used on input line 333.
@@ -1255,13 +1255,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [10 <./Images/fig1_detection.jpg>]
-<Images/fig3_trajectory.jpg, id=235, 1927.2pt x 1084.05pt>
-File: Images/fig3_trajectory.jpg Graphic file (type jpg)
-<use Images/fig3_trajectory.jpg>
-Package pdftex.def Info: Images/fig3_trajectory.jpg  used on input line 360.
-(pdftex.def)             Requested size: 455.24411pt x 256.07509pt.
+Overfull \hbox (3.99966pt too wide) in paragraph at lines 364--364
+ []\T1/ptm/b/n/10.95 dur(s)|
+ []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Overfull \hbox (7.63876pt too wide) in paragraph at lines 364--364
+ []\T1/ptm/b/n/10.95 spd(m/s)|
+ []
+
+
+Overfull \hbox (2.91588pt too wide) in paragraph at lines 364--364
+ []\T1/ptm/b/n/10.95 hook\TS1/ptm/b/n/10.95 °|
+ []
+
+
+Overfull \hbox (7.69424pt too wide) in paragraph at lines 364--364
+ []$\OML/cmm/m/it/10.95 Z[]$\T1/ptm/b/n/10.95 (m)|
+ []
+
+
+Overfull \hbox (3.69673pt too wide) in paragraph at lines 364--364
+ []\T1/ptm/m/n/10.95 1125.6|
+ []
 
 
 
@@ -1273,10 +1289,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [11 <./Images/fig2_calibration.jpg>]
-<Images/fig4_spin.jpg, id=240, 1927.2pt x 1084.05pt>
+<Images/fig3_trajectory.jpg, id=247, 1927.2pt x 1084.05pt>
+File: Images/fig3_trajectory.jpg Graphic file (type jpg)
+<use Images/fig3_trajectory.jpg>
+Package pdftex.def Info: Images/fig3_trajectory.jpg  used on input line 392.
+(pdftex.def)             Requested size: 455.24411pt x 256.07509pt.
+<Images/fig4_spin.jpg, id=248, 1927.2pt x 1084.05pt>
 File: Images/fig4_spin.jpg Graphic file (type jpg)
 <use Images/fig4_spin.jpg>
-Package pdftex.def Info: Images/fig4_spin.jpg  used on input line 373.
+Package pdftex.def Info: Images/fig4_spin.jpg  used on input line 405.
 (pdftex.def)             Requested size: 455.24411pt x 256.07509pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1291,6 +1312,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [12 <./Images/fig3_trajectory.jpg>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1314,14 +1338,14 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0D322275BC80F51C7065D879246C150D;3027.
+(rerunfilecheck)             Checksum: C64CA92E88A2EE8F029E110895853741;3218.
  ) 
 Here is how much of TeX's memory you used:
- 27812 strings out of 473190
- 503389 string characters out of 5715799
- 901308 words of memory out of 5000000
- 50455 multiletter control sequences out of 15000+600000
- 598739 words of font info for 94 fonts, out of 8000000 for 9000
+ 27830 strings out of 473190
+ 503599 string characters out of 5715799
+ 901507 words of memory out of 5000000
+ 50470 multiletter control sequences out of 15000+600000
+ 599050 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,20n,98p,429b,1092s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -1338,10 +1362,10 @@ exlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/202
 5/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on main.pdf (14 pages, 2209231 bytes).
+Output written on main.pdf (14 pages, 2211579 bytes).
 PDF statistics:
- 355 PDF objects out of 1000 (max. 8388607)
- 301 compressed objects within 4 object streams
- 94 named destinations out of 1000 (max. 500000)
- 206 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 363 PDF objects out of 1000 (max. 8388607)
+ 309 compressed objects within 4 object streams
+ 96 named destinations out of 1000 (max. 500000)
+ 214 words of extra memory for PDF output out of 10000 (max. 10000000)
 

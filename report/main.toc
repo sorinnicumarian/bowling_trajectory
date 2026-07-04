@@ -15,7 +15,8 @@
 \contentsline {subsection}{\numberline {5.1}Video Data}{9}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Ball Detection}{9}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Lane Calibration}{10}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}2D and 3D Trajectory}{11}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Spin Estimation}{12}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.4}Multi-Throw Generalisation}{11}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}2D and 3D Trajectory}{12}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Spin Estimation}{12}{subsection.5.6}%
 \contentsline {section}{\numberline {6}Conclusions and Open Problems}{13}{section.6}%
 \contentsline {section}{\numberline {7}References}{14}{section.7}%
