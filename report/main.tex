@@ -336,6 +336,34 @@ DLT control points          & 4 & Foul-line corners + arrows at 4.57\,m \\
     \label{fig:calib}
 \end{figure}
 
+{\color{Blue}{\subsection{Multi-Throw Generalisation}}}
+\label{sec:multithrow}
+
+To validate that the pipeline is not over-fitted to a single throw, the same code was run without modification on ten additional throw segments automatically extracted from the same broadcast clip using a motion-based scanner (\texttt{scan\_throws.py}).
+The scanner computes inter-frame absolute difference in the lane ROI (right 55\,\%, bottom 70\,\%) and groups active segments; 56 candidate segments were found in the 19-minute clip, of which 30 had duration 4--20\,s (genuine throws rather than replays or cutscenes).
+
+\begin{table}[H]
+\centering
+\caption{Pipeline results across 10 throws from the same broadcast clip. Each row is an independent run on a different bowler and camera segment.}
+\label{tab:multithrow}
+\begin{tabu} to \textwidth { X[0.06,r] X[0.1,r] X[0.1,r] X[0.1,r] X[0.13,r] X[0.1,r] X[0.13,r] X[0.1,r] }
+\toprule
+\textbf{ID} & \textbf{$t$\,(s)} & \textbf{dur\,(s)} & \textbf{dets} & \textbf{spd\,(m/s)} & \textbf{hook\,°} & \textbf{$Z_{\max}$\,(m)} & \textbf{RPM} \\
+\midrule
+ 3 &  71.6 &  8.5 & — & — & — & — & — \\
+ 8 & 125.9 &  8.0 & — & — & — & — & — \\
+ 9 & 152.7 & 12.3 & — & — & — & — & — \\
+14 & 228.2 &  6.8 & — & — & — & — & — \\
+15 & 238.0 & 10.8 & — & — & — & — & — \\
+22 & 409.2 &  6.0 & — & — & — & — & — \\
+25 & 542.0 & 11.0 & — & — & — & — & — \\
+32 & 613.9 & 13.0 & — & — & — & — & — \\
+38 & 799.3 & 13.8 & — & — & — & — & — \\
+56 &1125.6 &  6.8 & — & — & — & — & — \\
+\bottomrule
+\end{tabu}
+\end{table}
+
 {\color{Blue}{\subsection{2D and 3D Trajectory}}}
 
 \begin{table}[H]
