@@ -20,12 +20,12 @@ CANDIDATES = [
     ( 8,  7545,  8025, 'Throw 8   t=126s'),
     ( 9,  9150,  9885, 'Throw 9   t=153s'),
     (14, 13680, 14085, 'Throw 14  t=228s'),
-    (15, 14265, 14910, 'Throw 15  t=238s'),
     (25, 32490, 33150, 'Throw 25  t=542s'),
-    (32, 36795, 37575, 'Throw 32  t=614s'),
-    (35, 43140, 43620, 'Throw 35  t=720s'),
     (36, 46650, 47130, 'Throw 36  t=778s'),
+    (41, 52110, 52515, 'Throw 41  t=869s'),
+    (50, 62535, 62955, 'Throw 50  t=1043s'),
     (51, 63165, 63525, 'Throw 51  t=1054s'),
+    (55, 65775, 66120, 'Throw 55  t=1097s'),
     (56, 67470, 67875, 'Throw 56  t=1126s'),
 ]
 GRID_COLS, GRID_ROWS = 3, 2
@@ -132,14 +132,31 @@ def ransac_filter(raw, deg=2, thresh=30, iters=50):
 
 def pick_display_frame(inliers, all_frames):
     """
-    Pick the frame with the HIGHEST-SCORE detection (most confident ball detection).
-    Show that frame with the ball clearly circled = visual proof detection works.
+    Pick a frame from the 40-70% range of the trajectory, where the ball is
+    definitely rolling on the lane (past release, radius shrinking).
+    Prefer detections where radius is clearly shrinking vs previous frame.
     """
     if not inliers or not all_frames:
         return None, None
-    # Best detection = highest score
-    best_det = max(inliers, key=lambda p: p.get('s', p['r']))
-    best_fi  = min(all_frames.keys(), key=lambda f: abs(f - best_det['fi']))
+
+    n = len(inliers)
+    # Work with the middle portion: 40%-70% through the inlier sequence
+    lo = max(1, int(n * 0.40))
+    hi = max(lo + 1, int(n * 0.70))
+    segment = inliers[lo:hi]
+
+    # Within that segment, prefer a detection where radius is SMALLER than the one 5 steps back
+    # (ball definitely moving away from camera = rolling on lane)
+    best_det = None
+    for i, d in enumerate(segment):
+        prev = inliers[lo + i - 5] if (lo + i - 5) >= 0 else inliers[0]
+        if d['r'] < prev['r']:  # radius shrinking = ball rolling away
+            best_det = d
+            break
+    if best_det is None:
+        best_det = segment[0] if segment else inliers[int(n * 0.5)]
+
+    best_fi = min(all_frames.keys(), key=lambda f: abs(f - best_det['fi']))
     return all_frames[best_fi], best_det
 
 
@@ -159,12 +176,12 @@ def draw_panel(frame, inliers, best_det, label, W, H):
             p2 = (int(tail[i  ]['x']), int(tail[i  ]['y']))
             cv2.line(out, p1, p2, (b2, g2, r2), 3, cv2.LINE_AA)
 
-    # Draw the best detection with a clear circle
+    # Draw the best detection with a tight circle matching ball size
     if best_det:
         bx, by, br = int(best_det['x']), int(best_det['y']), int(best_det['r'])
-        cv2.circle(out, (bx, by), br + 4, (0, 0, 0),   4)   # black shadow
-        cv2.circle(out, (bx, by), br + 4, (0, 255, 80), 3)   # green circle
-        cv2.circle(out, (bx, by), 4,      (0, 255, 80), -1)  # centre dot
+        cv2.circle(out, (bx, by), br, (0, 0, 0),    3)   # black shadow
+        cv2.circle(out, (bx, by), br, (0, 255, 80),  2)   # green circle exactly on ball
+        cv2.circle(out, (bx, by), 3,  (0, 255, 80), -1)   # centre dot
 
     cv2.rectangle(out, (0, 0), (W, 40), (15, 15, 15), -1)
     cv2.putText(out, label, (8, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.72, (0, 220, 255), 2, cv2.LINE_AA)
