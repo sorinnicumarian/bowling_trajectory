@@ -23,9 +23,6 @@ CANDIDATES = [
     (25, 32490, 33150, 'Throw 25  t=542s'),
     (36, 46650, 47130, 'Throw 36  t=778s'),
     (41, 52110, 52515, 'Throw 41  t=869s'),
-    (50, 62535, 62955, 'Throw 50  t=1043s'),
-    (51, 63165, 63525, 'Throw 51  t=1054s'),
-    (55, 65775, 66120, 'Throw 55  t=1097s'),
     (56, 67470, 67875, 'Throw 56  t=1126s'),
 ]
 GRID_COLS, GRID_ROWS = 3, 2
@@ -81,8 +78,10 @@ def detect_raw(cap, start, end):
             if circ < 0.38: continue
             score = circ * area
             fx, fy = cx + roi_x, cy + roi_y0
+            # area-equivalent radius is tighter than minEnclosingCircle
+            r_draw = np.sqrt(area / np.pi)
             if best is None or score > best['s']:
-                best = {'fi': fi, 'x': fx, 'y': fy, 'r': r, 's': score}
+                best = {'fi': fi, 'x': fx, 'y': fy, 'r': r, 'r_draw': r_draw, 's': score}
 
         if best: raw.append(best)
 
@@ -178,9 +177,10 @@ def draw_panel(frame, inliers, best_det, label, W, H):
 
     # Draw the best detection with a tight circle matching ball size
     if best_det:
-        bx, by, br = int(best_det['x']), int(best_det['y']), int(best_det['r'])
+        bx, by = int(best_det['x']), int(best_det['y'])
+        br = int(best_det.get('r_draw', best_det['r']))  # area-equiv radius, tighter fit
         cv2.circle(out, (bx, by), br, (0, 0, 0),    3)   # black shadow
-        cv2.circle(out, (bx, by), br, (0, 255, 80),  2)   # green circle exactly on ball
+        cv2.circle(out, (bx, by), br, (0, 255, 80),  2)   # green circle on ball
         cv2.circle(out, (bx, by), 3,  (0, 255, 80), -1)   # centre dot
 
     cv2.rectangle(out, (0, 0), (W, 40), (15, 15, 15), -1)
