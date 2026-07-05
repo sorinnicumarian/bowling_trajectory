@@ -163,16 +163,15 @@ def draw_panel(frame, inliers, best_det, label, W, H):
     out = frame.copy()
     n   = len(inliers)
 
-    # Draw short tail (last 20 detections before best) as context
+    # Draw FULL trajectory (all inliers) as gradient line
     if n >= 2:
-        tail = inliers[-min(20, n):]
-        for i in range(1, len(tail)):
-            t = i / max(len(tail) - 1, 1)
+        for i in range(1, n):
+            t = i / max(n - 1, 1)
             b2 = int(255 * max(0, 1 - t * 2))
             g2 = int(200 * t)
             r2 = int(255 * min(1, t * 2))
-            p1 = (int(tail[i-1]['x']), int(tail[i-1]['y']))
-            p2 = (int(tail[i  ]['x']), int(tail[i  ]['y']))
+            p1 = (int(inliers[i-1]['x']), int(inliers[i-1]['y']))
+            p2 = (int(inliers[i  ]['x']), int(inliers[i  ]['y']))
             cv2.line(out, p1, p2, (b2, g2, r2), 3, cv2.LINE_AA)
 
     # Draw the best detection with a tight circle matching ball size
